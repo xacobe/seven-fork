@@ -1,3 +1,5 @@
+(this had been forked from https://github.com/planetoftheweb/seven)
+
 # Seven
 
 This project is a template for building sites using the [Eleventy](https://www.11ty.io/) static site generator. You can see a demo of the site at [7ty.tech](https://7ty.tech). It features a Vue.js powered simple search based on what's in `_site/posts` and `_site/courses` as well as pagination, animations and much more.
