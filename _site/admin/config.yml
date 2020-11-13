@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+# publish_mode: editorial_workflow
+
+media_folder: "images/uploads" # Media files will be stored in the repo under images/uploads
+public_folder: "/images" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: "courses"
+    label: "Courses"
+    preview_path: "blog/{{year}}/{{month}}/{{slug}}"
+    folder: "_site/courses"
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "summary", widget: "text"}
+      - {label: "Thumbnail", name: "thumb", widget: "image", default: "/courses/chocolate-dogecoin.jpg"}
+      - {label: "Hero", name: "hero", widget: "image"}
+      - {label: "Link", name: "links", widget: "string"}
+      - {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
+      - {label: "Tags", name: "tags", widget: "list",}
+
+editor:
+     preview: true
+
+sortable_fields: ['title']
